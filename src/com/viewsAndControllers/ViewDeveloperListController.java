@@ -17,7 +17,7 @@ import java.sql.*;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-public class EditDeveloperListController implements Initializable{
+public class ViewDeveloperListController implements Initializable{
 
 
     // 1. Set up the table that will display volunteers and the corresponding columns
@@ -38,7 +38,7 @@ public class EditDeveloperListController implements Initializable{
     @FXML
     private TableColumn<Developer, LocalDate> birthdayColumn;
 
-    public EditDeveloperListController(){
+    public ViewDeveloperListController(){
 
     }
 
@@ -103,7 +103,7 @@ public class EditDeveloperListController implements Initializable{
     public void editDeveloperButton (ActionEvent click) throws IOException{
         NewSceneMaker nsm = new NewSceneMaker();
 
-        nsm.newScene(click, "EditDeveloperList.fxml", "VisionWorks Database CRUD GUI");
+        nsm.newScene(click, "ViewDeveloperList.fxml", "VisionWorks Database CRUD GUI");
     }
 
     public void createDeveloperButton(ActionEvent click) throws IOException {

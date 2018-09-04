@@ -20,7 +20,7 @@
          <children>
             <HBox prefHeight="100.0" prefWidth="200.0" />
             <VBox alignment="TOP_CENTER" layoutX="212.0" layoutY="87.0" />
-            <Label fx:id="CreateNewUserLabel" layoutX="300.0" layoutY="6.0" text="Create New User">
+            <Label fx:id="CreateNewUserLabel" layoutX="307.0" layoutY="6.0" text="Create New User">
                <font>
                   <Font name="Calibri Bold" size="14.0" />
                </font></Label>
@@ -54,10 +54,10 @@
             <Label fx:id="errMsgLabel" layoutX="356.0" layoutY="281.0" text="Label" />
             <ToolBar layoutX="66.0" layoutY="311.0" prefHeight="40.0" prefWidth="607.0">
                <items>
-                  <Button fx:id="createDeveloperButton" mnemonicParsing="false" onAction="#createDeveloperButton" prefHeight="25.0" prefWidth="145.0" text="Create New Developer" />
+                  <Button fx:id="viewDeveloperButton" mnemonicParsing="false" onAction="#viewDeveloperButton" prefHeight="25.0" prefWidth="145.0" text="View Developer" />
                   <Button fx:id="EditDeveloperButton" mnemonicParsing="false" onAction="#editDeveloperButton" prefHeight="25.0" prefWidth="145.0" text="Edit Developer" />
-                  <Button fx:id="homeButton" layoutX="10.0" layoutY="14.0" mnemonicParsing="false" onAction="#newDeveloperHomeButton" prefHeight="25.0" prefWidth="145.0" text="Home" />
-                  <Button fx:id="deleteDeveloperButton" layoutX="250.0" layoutY="13.0" mnemonicParsing="false" onAction="#createDeveloperButton" prefHeight="25.0" prefWidth="145.0" text="Delete Developer" />
+                  <Button fx:id="homeButton" layoutX="10.0" layoutY="14.0" mnemonicParsing="false" onAction="#databaseAdministratorHomeButton" prefHeight="25.0" prefWidth="145.0" text="Home" />
+                  <Button fx:id="deleteDeveloperButton" layoutX="250.0" layoutY="13.0" mnemonicParsing="false" onAction="#homeButton" prefHeight="25.0" prefWidth="145.0" text="Delete Developer" />
                </items>
             </ToolBar>
          </children>

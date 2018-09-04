@@ -8,12 +8,12 @@
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" text="untitled" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1">
+<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" text="untitled" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.viewsAndControllers.ViewDeveloperListController">
    <content>
       <AnchorPane prefHeight="400.0" prefWidth="600.0">
          <children>
             <Label layoutX="211.0" layoutY="7.0" text="Choose a Developer Which You Would Like to Edit" />
-            <TableView fx:id="developerTableView" layoutX="32.0" layoutY="21.0" prefHeight="239.0" prefWidth="637.0">
+            <TableView fx:id="developerTableView" layoutX="40.0" layoutY="45.0" prefHeight="239.0" prefWidth="637.0">
                <columns>
                   <TableColumn fx:id="developerIDColumn" prefWidth="158.0" text="Developer ID" />
                   <TableColumn fx:id="firstNameColumn" prefWidth="147.0" text="First Name" />
@@ -25,7 +25,7 @@
                <items>
                   <Button fx:id="createDeveloperButton" mnemonicParsing="false" onAction="#createDeveloperButton" prefHeight="25.0" prefWidth="145.0" text="Create New Developer" />
                   <Button fx:id="EditDeveloperButton" layoutX="20.0" layoutY="605.0" mnemonicParsing="false" onAction="#editDeveloperButton" prefHeight="25.0" prefWidth="145.0" text="Edit Developer" />
-                  <Button fx:id="homeButton" layoutX="10.0" layoutY="14.0" mnemonicParsing="false" onAction="#newDeveloperHomeButton" prefHeight="25.0" prefWidth="145.0" text="Home" />
+                  <Button fx:id="homeButton" layoutX="10.0" layoutY="14.0" mnemonicParsing="false" onAction="#homeButton" prefHeight="25.0" prefWidth="145.0" text="Home" />
                   <Button fx:id="deleteDeveloperButton" layoutX="250.0" layoutY="13.0" mnemonicParsing="false" onAction="#createDeveloperButton" prefHeight="25.0" prefWidth="145.0" text="Delete Developer" />
                </items>
             </ToolBar>

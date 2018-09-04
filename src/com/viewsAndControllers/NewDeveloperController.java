@@ -57,7 +57,7 @@ public class NewDeveloperController implements Initializable{
 
     public void homeButton(ActionEvent click) throws IOException {
         NewSceneMaker nsm = new NewSceneMaker();
-        nsm.newScene(click, "DeveloperTable.fxml", "VisionWorks CRUD GUI");
+        nsm.newScene(click, "DatabaseAdministratorHome.fxml", "VisionWorks CRUD GUI");
 
     }
 
@@ -67,21 +67,29 @@ public class NewDeveloperController implements Initializable{
             errMsgLabel.setText("");
     }
 
+    public void viewDeveloperButton(ActionEvent event) throws IOException{
+        NewSceneMaker nsm = new NewSceneMaker();
+
+        nsm.newScene(event, "ViewDeveloperList.fxml", "VisionWorks Database CRUD GUI");
+    }
+
     public void editDeveloperButton (ActionEvent click) throws IOException{
         NewSceneMaker nsm = new NewSceneMaker();
 
-        nsm.newScene(click, "EditDeveloperList.fxml", "VisionWorks Database CRUD GUI");
+        nsm.newScene(click, "ViewDeveloperList.fxml", "VisionWorks Database CRUD GUI");
     }
 
-    public void createDeveloperButton(ActionEvent click) throws IOException {
+    public void databaseAdministratorHomeButton(ActionEvent click) throws IOException {
         NewSceneMaker nsm = new NewSceneMaker();
 
-        nsm.newScene(click, "NewDeveloper.fxml", "VisionWorks Database CRUD GUI");
+        nsm.newScene(click, "DatabaseAdministratorHome.fxml", "VisionWorks Database CRUD GUI");
     }
 
-    public void newDeveloperHomeButton(ActionEvent event) throws IOException{
+    public void deleteDeveloperButton(ActionEvent event) throws IOException{
         NewSceneMaker nsm = new NewSceneMaker();
 
         nsm.newScene(event, "DeveloperTable.fxml", "VisionWorks Database CRUD GUI");
     }
+
+
 }

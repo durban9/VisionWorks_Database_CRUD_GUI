@@ -10,7 +10,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("DeveloperTable.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("DatabaseAdministratorHome.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setTitle("VisionWorks Database CRUD GUI");
         primaryStage.setScene(scene);
