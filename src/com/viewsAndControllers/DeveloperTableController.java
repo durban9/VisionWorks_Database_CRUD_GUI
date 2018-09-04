@@ -112,4 +112,13 @@ public class DeveloperTableController implements Initializable {
 
         nsm.newScene(click, "NewDeveloper.fxml", "VisionWorks Database CRUD GUI");
     }
+
+    public void homeButton(ActionEvent click) throws IOException{
+
+        NewSceneMaker nsm = new NewSceneMaker();
+
+        nsm.newScene(click, "DeveloperTable.fxml", "VisionWorks Database CRUD GUI");
+
+
+    }
 }

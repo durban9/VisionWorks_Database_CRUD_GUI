@@ -15,8 +15,6 @@ public class Developer {
 
     private LocalDate birthday;
 
-    private File imagefile;
-
     //second, build a constructor for the class, so that the class may develop specific instances from
     // the constructor
     public Developer(String employeeNumber, String firstName, String lastName, LocalDate birthday) {
@@ -74,6 +72,8 @@ public class Developer {
                 throw new IllegalArgumentException("Employees must be over the age of 16 to work at VisionWorks.");
 
         this.birthday = birthday;
+
+
     }
 
     // fourth, create a method that allows instances of the above class to be entered into the database.
@@ -94,8 +94,8 @@ public class Developer {
             //create a valid sql statement template that will allow the instance and place it in a string
             // variable called "sql"
 
-            String sql = "INSERT INTO developer (employeeNumber, employeeFirstName, employeeLastName, birthday, imagefile)" +
-                    "VALUES (?,?,?,?,?)";
+            String sql = "INSERT INTO developer (employeeNumber, employeeFirstName, employeeLastName, birthday)" +
+                    "VALUES (?,?,?,?)";
 
             //
             preparedStatement = conn.prepareStatement(sql);
@@ -110,7 +110,6 @@ public class Developer {
             preparedStatement.setString(2,employeeFirstName);
             preparedStatement.setString(3, employeeLastName);
             preparedStatement.setDate(4, db);
-            preparedStatement.setObject(5, imagefile);
 
             //update the database by adding this particular update.
             preparedStatement.executeUpdate();

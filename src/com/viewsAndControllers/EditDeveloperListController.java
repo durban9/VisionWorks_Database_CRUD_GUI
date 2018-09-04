@@ -3,12 +3,15 @@ package com.viewsAndControllers;
 import com.models.Developer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import javax.swing.*;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.time.LocalDate;
@@ -96,4 +99,25 @@ public class EditDeveloperListController implements Initializable{
         }
 
     }
+
+    public void editDeveloperButton (ActionEvent click) throws IOException{
+        NewSceneMaker nsm = new NewSceneMaker();
+
+        nsm.newScene(click, "EditDeveloperList.fxml", "VisionWorks Database CRUD GUI");
+    }
+
+    public void createDeveloperButton(ActionEvent click) throws IOException {
+        NewSceneMaker nsm = new NewSceneMaker();
+
+        nsm.newScene(click, "NewDeveloper.fxml", "VisionWorks Database CRUD GUI");
+    }
+
+    public void homeButton(ActionEvent click) throws IOException{
+        NewSceneMaker nsm = new NewSceneMaker();
+
+        nsm.newScene(click, "DeveloperTable.fxml", "VisionWorks Database CRUD GUI");
+
+
+    }
+
 }

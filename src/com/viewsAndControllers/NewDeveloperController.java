@@ -8,11 +8,15 @@ import com.models.Developer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import javax.swing.*;
+
 public class NewDeveloperController implements Initializable{
+
 
     @FXML private TextField developerEmployeeNumber;
     @FXML private TextField developerFirstName;
@@ -51,9 +55,33 @@ public class NewDeveloperController implements Initializable{
 
     }
 
+    public void homeButton(ActionEvent click) throws IOException {
+        NewSceneMaker nsm = new NewSceneMaker();
+        nsm.newScene(click, "DeveloperTable.fxml", "VisionWorks CRUD GUI");
+
+    }
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
             errMsgLabel.setText("");
+    }
+
+    public void editDeveloperButton (ActionEvent click) throws IOException{
+        NewSceneMaker nsm = new NewSceneMaker();
+
+        nsm.newScene(click, "EditDeveloperList.fxml", "VisionWorks Database CRUD GUI");
+    }
+
+    public void createDeveloperButton(ActionEvent click) throws IOException {
+        NewSceneMaker nsm = new NewSceneMaker();
+
+        nsm.newScene(click, "NewDeveloper.fxml", "VisionWorks Database CRUD GUI");
+    }
+
+    public void newDeveloperHomeButton(ActionEvent event) throws IOException{
+        NewSceneMaker nsm = new NewSceneMaker();
+
+        nsm.newScene(event, "DeveloperTable.fxml", "VisionWorks Database CRUD GUI");
     }
 }

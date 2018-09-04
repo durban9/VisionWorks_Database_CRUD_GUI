@@ -25,10 +25,12 @@
                   </TableView>
                </children>
             </VBox>
-            <ToolBar layoutX="23.0" layoutY="276.0" prefHeight="40.0" prefWidth="600.0">
+            <ToolBar layoutX="20.0" layoutY="310.0" prefHeight="40.0" prefWidth="606.0">
               <items>
-                <Button mnemonicParsing="false" onAction="#createDeveloperButton" text="Create New Volunteer" />
-                  <Button fx:id="EditDeveloperButton" mnemonicParsing="false" onAction="#editDeveloperButton" prefHeight="25.0" prefWidth="107.0" text="Edit Developer" />
+                <Button fx:id="createDeveloperButton" mnemonicParsing="false" onAction="#createDeveloperButton" prefHeight="25.0" prefWidth="145.0" text="Create New Developer" />
+                  <Button fx:id="editDeveloperButton" mnemonicParsing="false" onAction="#editDeveloperButton" prefHeight="25.0" prefWidth="145.0" text="Edit Developer" />
+                  <Button fx:id="homeButton" layoutX="10.0" layoutY="310.0" mnemonicParsing="false" onAction="#homeButton" prefHeight="25.0" prefWidth="145.0" text="Home" />
+                  <Button fx:id="deleteDeveloperButton" layoutX="250.0" layoutY="13.0" mnemonicParsing="false" onAction="#createDeveloperButton" prefHeight="25.0" prefWidth="145.0" text="Delete Developer" />
               </items>
             </ToolBar>
             <Label layoutX="277.0" layoutY="6.0" text="List of Developers" />
