@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -8,28 +9,37 @@
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" text="untitled" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.viewsAndControllers.ViewDeveloperListController">
+<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="untitled" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.viewsAndControllers.ViewDeveloperListController">
    <content>
-      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+      <AnchorPane layoutY="310.0">
          <children>
             <Label layoutX="211.0" layoutY="7.0" text="Choose a Developer Which You Would Like to Edit" />
-            <TableView fx:id="developerTableView" layoutX="40.0" layoutY="45.0" prefHeight="239.0" prefWidth="637.0">
+            <TableView fx:id="developerTableView" layoutX="31.0" layoutY="48.0" prefHeight="239.0" prefWidth="637.0" AnchorPane.bottomAnchor="143.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="38.0">
                <columns>
                   <TableColumn fx:id="developerIDColumn" prefWidth="158.0" text="Developer ID" />
                   <TableColumn fx:id="firstNameColumn" prefWidth="147.0" text="First Name" />
                   <TableColumn fx:id="lastNameColumn" minWidth="8.0" prefWidth="151.0" text="Last Name" />
                   <TableColumn fx:id="birthdayColumn" minWidth="0.0" prefWidth="163.0" text="Birthday" />
                </columns>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
             </TableView>
-            <ToolBar layoutX="40.0" layoutY="310.0" prefHeight="40.0" prefWidth="607.0">
+            <ToolBar layoutX="31.0" layoutY="364.0" prefHeight="45.0" prefWidth="637.0">
                <items>
                   <Button fx:id="createDeveloperButton" mnemonicParsing="false" onAction="#createDeveloperButton" prefHeight="25.0" prefWidth="145.0" text="Create New Developer" />
                   <Button fx:id="EditDeveloperButton" layoutX="20.0" layoutY="605.0" mnemonicParsing="false" onAction="#editDeveloperButton" prefHeight="25.0" prefWidth="145.0" text="Edit Developer" />
                   <Button fx:id="homeButton" layoutX="10.0" layoutY="14.0" mnemonicParsing="false" onAction="#homeButton" prefHeight="25.0" prefWidth="145.0" text="Home" />
                   <Button fx:id="deleteDeveloperButton" layoutX="250.0" layoutY="13.0" mnemonicParsing="false" onAction="#createDeveloperButton" prefHeight="25.0" prefWidth="145.0" text="Delete Developer" />
                </items>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
             </ToolBar>
          </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
       </AnchorPane>
    </content>
 </TitledPane>
