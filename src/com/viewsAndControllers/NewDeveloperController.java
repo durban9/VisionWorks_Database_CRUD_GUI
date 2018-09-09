@@ -15,7 +15,7 @@ import javafx.scene.control.TextField;
 
 import javax.swing.*;
 
-public class NewDeveloperController implements Initializable{
+public class NewDeveloperController implements Initializable, ControllerClass{
 
 
     @FXML private TextField developerEmployeeNumber;
@@ -23,6 +23,8 @@ public class NewDeveloperController implements Initializable{
     @FXML private TextField developerLastName;
     @FXML private DatePicker developerBirthdate;
     @FXML private Label errMsgLabel;
+
+    private Developer developer;
 
     public NewDeveloperController() {
     }
@@ -53,6 +55,8 @@ public class NewDeveloperController implements Initializable{
             errMsgLabel.setText(e.getMessage());
         }
 
+
+
     }
 
     public void homeButton(ActionEvent click) throws IOException {
@@ -73,11 +77,6 @@ public class NewDeveloperController implements Initializable{
         nsm.newScene(event, "ViewDeveloperList.fxml", "VisionWorks Database CRUD GUI");
     }
 
-    public void editDeveloperButton (ActionEvent click) throws IOException{
-        NewSceneMaker nsm = new NewSceneMaker();
-
-        nsm.newScene(click, "ViewDeveloperList.fxml", "VisionWorks Database CRUD GUI");
-    }
 
     public void databaseAdministratorHomeButton(ActionEvent click) throws IOException {
         NewSceneMaker nsm = new NewSceneMaker();
@@ -90,6 +89,7 @@ public class NewDeveloperController implements Initializable{
 
         nsm.newScene(event, "DeveloperTable.fxml", "VisionWorks Database CRUD GUI");
     }
+
 
 
 }

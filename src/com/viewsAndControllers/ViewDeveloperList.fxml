@@ -28,8 +28,8 @@
             <ToolBar layoutX="31.0" layoutY="364.0" prefHeight="45.0" prefWidth="637.0">
                <items>
                   <Button fx:id="createDeveloperButton" mnemonicParsing="false" onAction="#createDeveloperButton" prefHeight="25.0" prefWidth="145.0" text="Create New Developer" />
-                  <Button fx:id="EditDeveloperButton" layoutX="20.0" layoutY="605.0" mnemonicParsing="false" onAction="#editDeveloperButton" prefHeight="25.0" prefWidth="145.0" text="Edit Developer" />
-                  <Button fx:id="homeButton" layoutX="10.0" layoutY="14.0" mnemonicParsing="false" onAction="#homeButton" prefHeight="25.0" prefWidth="145.0" text="Home" />
+                  <Button fx:id="EditDeveloperButton" layoutX="20.0" layoutY="605.0" mnemonicParsing="false" onAction="#editDeveloperButton" onMouseClicked="#developerToBeEdited" prefHeight="25.0" prefWidth="145.0" text="Edit Developer" />
+                  <Button fx:id="homeButton" layoutX="10.0" layoutY="14.0" mnemonicParsing="false" onAction="#adminHomeButton" prefHeight="25.0" prefWidth="145.0" text="Home" />
                   <Button fx:id="deleteDeveloperButton" layoutX="250.0" layoutY="13.0" mnemonicParsing="false" onAction="#createDeveloperButton" prefHeight="25.0" prefWidth="145.0" text="Delete Developer" />
                </items>
                <padding>

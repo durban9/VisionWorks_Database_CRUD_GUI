@@ -6,6 +6,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -38,6 +39,9 @@ public class ViewDeveloperListController implements Initializable{
     @FXML
     private TableColumn<Developer, LocalDate> birthdayColumn;
 
+    @FXML
+    private Button  editDeveloperButton;
+
     public ViewDeveloperListController(){
 
     }
@@ -51,6 +55,7 @@ public class ViewDeveloperListController implements Initializable{
         firstNameColumn.setCellValueFactory(new PropertyValueFactory<Developer, String>("employeeFirstName"));
         lastNameColumn.setCellValueFactory(new PropertyValueFactory<Developer, String>("employeeLastName"));
         birthdayColumn.setCellValueFactory(new PropertyValueFactory<Developer, LocalDate>("birthday"));
+        this.editDeveloperButton.setDisable(true);
 
         //4. Load data
         try {
@@ -100,24 +105,28 @@ public class ViewDeveloperListController implements Initializable{
 
     }
 
-    public void editDeveloperButton (ActionEvent click) throws IOException{
-        NewSceneMaker nsm = new NewSceneMaker();
-
-        nsm.newScene(click, "ViewDeveloperList.fxml", "VisionWorks Database CRUD GUI");
-    }
-
     public void createDeveloperButton(ActionEvent click) throws IOException {
         NewSceneMaker nsm = new NewSceneMaker();
 
         nsm.newScene(click, "NewDeveloper.fxml", "VisionWorks Database CRUD GUI");
     }
 
-    public void homeButton(ActionEvent click) throws IOException{
+    public void editDeveloperButton (ActionEvent click) throws IOException{
+        NewSceneMaker nsm = new NewSceneMaker();
+
+        nsm.newScene(click, "EditDeveloper.fxml", "VisionWorks Database CRUD GUI");
+    }
+
+
+
+    public void adminHomeButton(ActionEvent click) throws IOException{
         NewSceneMaker nsm = new NewSceneMaker();
 
         nsm.newScene(click, "DatabaseAdministratorHome.fxml", "VisionWorks Database CRUD GUI");
+    }
 
-
+    public void developerToBeEdited(){
+        editDeveloperButton.setDisable(false);
     }
 
 }

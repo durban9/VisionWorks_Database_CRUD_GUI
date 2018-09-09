@@ -15,11 +15,13 @@ public class DatabaseAdministratorHome implements Initializable {
 
     }
 
-    public void createDeveloperButton(ActionEvent click) throws IOException {
+    public void newDeveloperButton(ActionEvent click) throws IOException {
         NewSceneMaker nsm = new NewSceneMaker();
 
         nsm.newScene(click, "NewDeveloper.fxml", "VisionWorks Database CRUD GUI");
+
     }
+
 
 
     public void editDeveloperButton (ActionEvent click) throws IOException {

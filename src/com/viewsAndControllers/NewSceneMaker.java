@@ -1,5 +1,6 @@
 package com.viewsAndControllers;
 
+import com.models.Developer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -7,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.IOException;
 
 public class NewSceneMaker {
@@ -34,6 +36,30 @@ public class NewSceneMaker {
 
         //5. Pull the curtain and start the show.
         stage.show();
+    }
+
+    public void newScene(ActionEvent editButton, String sceneTitle, String title, Developer developer,
+                         ControllerClass controllerClass) throws IOException{
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(sceneTitle));
+        Parent parent = loader.load();
+
+        Scene scene = new Scene(parent);
+
+        controllerClass = loader.getController();
+
+        controllerClass.preloadData(developer);
+
+        Stage stage = (Stage) ((Node)editButton.getSource()).getScene().getWindow();
+
+        stage.setTitle(title);
+        stage.setScene(scene);
+        stage.show();
+
+
+
+
     }
 
 

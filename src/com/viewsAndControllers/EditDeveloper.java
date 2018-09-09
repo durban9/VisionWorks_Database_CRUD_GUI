@@ -36,7 +36,7 @@ public class EditDeveloper implements Initializable {
     @FXML
     private TableColumn<Developer, LocalDate> birthdayColumn;
 
-
+    private Developer developer;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -111,5 +111,21 @@ public class EditDeveloper implements Initializable {
         NewSceneMaker nsm = new NewSceneMaker();
 
         nsm.newScene(click, "DatabaseAdministratorHome.fxml", "VisionWorks Database CRUD GUI");
+    }
+
+    public void editDeveloperButton (ActionEvent click) throws IOException{
+        NewSceneMaker nsm = new NewSceneMaker();
+
+        nsm.newScene(click, "ViewDeveloperList.fxml", "VisionWorks Database CRUD GUI");
+    }
+
+    public void loadData(Developer developer){
+        this.developer = developer;
+        this.firstNameColumn.setText(developer.getEmployeeFirstName());
+        this.lastNameColumn.setText(developer.getEmployeeLastName());
+        this.developerIDColumn.setText(developer.getEmployeeNumber());
+        this.birthdayColumn.setText(String.valueOf(developer.getBirthday()));
+
+
     }
 }
