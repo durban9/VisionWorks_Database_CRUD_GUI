@@ -129,6 +129,44 @@ public class Developer {
         }
     }
 
+    public void updateDB() throws SQLException {
+
+        Connection conn = null;
+        PreparedStatement preparedStatement = null;
+        try{
+
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/visionworksframeinventory?verifyServerCertificate=false&useSSL=true", "root", "VisionWorks!");
+            String sql = "UPDATE developer SET employeeNumber = ?, employeeFirstName = ?, employeeLastName = ?, birthday = ?"
+                    + "WHERE employeeNumber = ?";
+
+            preparedStatement = conn.prepareStatement(sql);
+
+            Date db = Date.valueOf(birthday);
+            preparedStatement.setString(1, employeeNumber);
+            preparedStatement.setString(2, employeeFirstName);
+            preparedStatement.setString(3, employeeLastName);
+            preparedStatement.setDate(4, db);
+
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+
+
+        } catch(SQLException e){
+            System.err.println(e.getMessage());
+        }
+        finally {
+            if (conn != null) {
+                conn.close();
+            }
+            if (preparedStatement != null) {
+                preparedStatement.close();
+            }
+        }
+
+    }
+
+
+
 
 
 }

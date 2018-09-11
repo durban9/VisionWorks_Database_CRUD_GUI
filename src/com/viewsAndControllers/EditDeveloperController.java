@@ -1,19 +1,22 @@
 package com.viewsAndControllers;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
-
 import com.models.Developer;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 
-public class NewDeveloperController implements Initializable, ControllerClass{
+import java.io.IOException;
+import java.net.URL;
+import java.sql.*;
+import java.time.LocalDate;
+import java.util.ResourceBundle;
+
+public class EditDeveloperController implements Initializable {
+
 
 
     @FXML private TextField developerEmployeeNumber;
@@ -23,42 +26,32 @@ public class NewDeveloperController implements Initializable, ControllerClass{
     @FXML private Label errMsgLabel;
     @FXML private Label createNewUserLabel;
     @FXML private Developer developer;
-    @FXML private Button createNewUserButton;
 
 
-    public NewDeveloperController() {
+    public EditDeveloperController() {
     }
 
     //create a method for the submit button on the NewDeveloperScene
-    public void createNewUserButton(ActionEvent event)  {
+    public void editUserButton(ActionEvent event)  {
 
         try{
-
-            if (developer != null){
-                developer.updateDB();
-                NewSceneMaker nsm = new NewSceneMaker();
-                nsm.newScene(event, "ViewDeveloperList.fxml", "VisionWorks Database CRUD GUI");
-            }else {
-                //first, create an instance of the Developer class called developer, which retrieves the private
-                // attributes
-                // of the developer class using the Developer class' getters.
-                Developer developer = new Developer(developerEmployeeNumber.getText(), developerFirstName.getText(),
-                        developerLastName.getText(), developerBirthdate.getValue());
+            //first, create an instance of the Developer class called developer, which retrieves the private attributes
+            // of the developer class using the Developer class' getters.
+            Developer developer = new Developer(developerEmployeeNumber.getText(),developerFirstName.getText(),
+                    developerLastName.getText(), developerBirthdate.getValue());
 
 
-                //sets the error message to blank
-                errMsgLabel.setText("");
+            //sets the error message to blank
+            errMsgLabel.setText("");
 
-                //inserts the newly created developer instance and inserts the instance into the database.
-                developer.insertIntoDB();
+            //inserts the newly created developer instance and inserts the instance into the database.
+            developer.insertIntoDB();
 
 
-                NewSceneMaker nsm = new NewSceneMaker();
-                nsm.newScene(event, "EditDeveloper.fxml", "VisionWorks Database CRUD GUI");
+            NewSceneMaker nsm = new NewSceneMaker();
+            nsm.newScene(event, "EditDeveloper.fxml", "VisionWorks Database CRUD GUI");
 
-            }
-        }
-            catch (Exception e) {
+        } catch (Exception e) {
             //retrieves the particular error message that pertains to the attribute,
             // should the attribute throw an exception
             errMsgLabel.setText(e.getMessage());
@@ -77,7 +70,7 @@ public class NewDeveloperController implements Initializable, ControllerClass{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-            errMsgLabel.setText("");
+        errMsgLabel.setText("");
     }
 
     public void viewDeveloperListButton(ActionEvent event) throws IOException{
@@ -104,7 +97,7 @@ public class NewDeveloperController implements Initializable, ControllerClass{
         nsm.newScene(event, "EditDeveloper.fxml", "VisionWorks Database CRUD GUI");
     }
 
-    @Override
+   // @Override
     public void preloadData(Developer developer){
         this.developer = developer;
         this.developerEmployeeNumber.setText(developer.getEmployeeNumber());
@@ -112,21 +105,5 @@ public class NewDeveloperController implements Initializable, ControllerClass{
         this.developerLastName.setText(developer.getEmployeeLastName());
         this.developerBirthdate.setValue(developer.getBirthday());
         this.createNewUserLabel.setText("Edit Developer");
-        this.createNewUserButton.setText("Save Edit to Database");
-        this.createNewUserButton.setText("Save Edit to Database");
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-           
 }

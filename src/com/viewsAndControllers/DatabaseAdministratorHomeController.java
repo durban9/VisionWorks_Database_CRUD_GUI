@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class DatabaseAdministratorHome implements Initializable {
+public class DatabaseAdministratorHomeController implements Initializable {
 
 
     @Override
@@ -27,7 +27,7 @@ public class DatabaseAdministratorHome implements Initializable {
     public void editDeveloperButton (ActionEvent click) throws IOException {
         NewSceneMaker nsm = new NewSceneMaker();
 
-        nsm.newScene(click, "EditDeveloper.fxml", "VisionWorks Database CRUD GUI");
+        nsm.newScene(click, "EditDeveloperList.fxml", "VisionWorks Database CRUD GUI");
     }
 
 

@@ -18,7 +18,7 @@ import java.sql.*;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-public class ViewDeveloperListController implements Initializable{
+public class ViewDeveloperListController implements Initializable {
 
 
     // 1. Set up the table that will display volunteers and the corresponding columns
@@ -39,10 +39,9 @@ public class ViewDeveloperListController implements Initializable{
     @FXML
     private TableColumn<Developer, LocalDate> birthdayColumn;
 
-    @FXML
-    private Button  editDeveloperButton;
 
-    public ViewDeveloperListController(){
+
+    public ViewDeveloperListController() {
 
     }
 
@@ -55,7 +54,7 @@ public class ViewDeveloperListController implements Initializable{
         firstNameColumn.setCellValueFactory(new PropertyValueFactory<Developer, String>("employeeFirstName"));
         lastNameColumn.setCellValueFactory(new PropertyValueFactory<Developer, String>("employeeLastName"));
         birthdayColumn.setCellValueFactory(new PropertyValueFactory<Developer, LocalDate>("birthday"));
-        this.editDeveloperButton.setDisable(true);
+
 
         //4. Load data
         try {
@@ -80,7 +79,7 @@ public class ViewDeveloperListController implements Initializable{
             statement = connection.createStatement();
             resultSet = statement.executeQuery("SELECT * FROM developer");
 
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 Developer developerSet = new Developer(resultSet.getString("employeeNumber"),
                         resultSet.getString("employeeFirstName"),
                         resultSet.getString("employeeLastName"),
@@ -111,22 +110,18 @@ public class ViewDeveloperListController implements Initializable{
         nsm.newScene(click, "NewDeveloper.fxml", "VisionWorks Database CRUD GUI");
     }
 
-    public void editDeveloperButton (ActionEvent click) throws IOException{
+    public void editDeveloperButton(ActionEvent click) throws IOException {
         NewSceneMaker nsm = new NewSceneMaker();
 
-        nsm.newScene(click, "EditDeveloper.fxml", "VisionWorks Database CRUD GUI");
+        nsm.newScene(click, "EditDeveloperList.fxml", "VisionWorks Database CRUD GUI");
     }
 
 
-
-    public void adminHomeButton(ActionEvent click) throws IOException{
+    public void adminHomeButton(ActionEvent click) throws IOException {
         NewSceneMaker nsm = new NewSceneMaker();
 
         nsm.newScene(click, "DatabaseAdministratorHome.fxml", "VisionWorks Database CRUD GUI");
     }
-
-    public void developerToBeEdited(){
-        editDeveloperButton.setDisable(false);
-    }
-
 }
+
+

@@ -8,10 +8,14 @@
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="440.0" prefWidth="688.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.viewsAndControllers.ViewDeveloperListController">
+<AnchorPane prefHeight="440.0" prefWidth="688.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.viewsAndControllers.EditDeveloperListController">
    <children>
-      <Label layoutX="211.0" layoutY="7.0" text="Choose a Developer Which You Would Like to Edit" />
-      <TableView fx:id="developerTableView" layoutX="31.0" layoutY="48.0" prefHeight="239.0" prefWidth="637.0" AnchorPane.bottomAnchor="143.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="38.0">
+      <Label layoutX="202.0" text="Choose a Developer Which You Would Like to Edit">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </Label>
+      <TableView fx:id="developerTableView" layoutX="31.0" layoutY="48.0" onMouseClicked="#developerToBeEdited" prefHeight="239.0" prefWidth="637.0" AnchorPane.bottomAnchor="143.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="38.0">
          <columns>
             <TableColumn fx:id="developerIDColumn" prefWidth="158.0" text="Developer ID" />
             <TableColumn fx:id="firstNameColumn" prefWidth="147.0" text="First Name" />
@@ -25,14 +29,19 @@
       <ToolBar layoutX="31.0" layoutY="364.0" prefHeight="45.0" prefWidth="637.0">
          <items>
             <Button fx:id="createDeveloperButton" mnemonicParsing="false" onAction="#createDeveloperButton" prefHeight="25.0" prefWidth="145.0" text="Create New Developer" />
-            <Button fx:id="editDeveloperButton" layoutX="20.0" layoutY="605.0" mnemonicParsing="false" onAction="#editDeveloperButton" prefHeight="25.0" prefWidth="145.0" text="Edit Developer" />
-            <Button fx:id="homeButton" layoutX="10.0" layoutY="14.0" mnemonicParsing="false" onAction="#adminHomeButton" prefHeight="25.0" prefWidth="145.0" text="Home" />
+            <Button fx:id="viewDeveloperButton" layoutX="20.0" layoutY="605.0" mnemonicParsing="false" onAction="#viewDeveloperButton" prefHeight="25.0" prefWidth="145.0" text="View Developer" />
+            <Button fx:id="homeButton" layoutX="10.0" layoutY="14.0" mnemonicParsing="false" onAction="#homeButton" prefHeight="25.0" prefWidth="145.0" text="Home" />
             <Button fx:id="deleteDeveloperButton" layoutX="250.0" layoutY="13.0" mnemonicParsing="false" onAction="#createDeveloperButton" prefHeight="25.0" prefWidth="145.0" text="Delete Developer" />
          </items>
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
       </ToolBar>
+      <Button fx:id="editDeveloperButton" layoutX="296.0" layoutY="301.0" mnemonicParsing="false" onAction="#editDeveloperButtonPushed" text="Edit Developer">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </Button>
    </children>
    <padding>
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
