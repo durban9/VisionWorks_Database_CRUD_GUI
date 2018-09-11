@@ -15,6 +15,12 @@ public class Developer {
 
     private LocalDate birthday;
 
+
+
+
+
+
+
     //second, build a constructor for the class, so that the class may develop specific instances from
     // the constructor
     public Developer(String employeeNumber, String firstName, String lastName, LocalDate birthday) {
@@ -26,10 +32,7 @@ public class Developer {
     //sometimes, a constructor needs to have more parameters passed to it. In case of such an event, we build a
     // second constructor that takes more parameters from the input, thus overriding the original constructor so as
     // to accommodate the new instance of the class.
-    public Developer(String employeeNumber, String firstName, String lastName, LocalDate birthday, File imageFile){
-        this(employeeNumber, firstName, lastName, birthday);
 
-    }
 
     //third, generate getters and setters, which allow new instances to be sent to the database, and allows existing instances
     // to be retrieved from the database.
@@ -136,8 +139,7 @@ public class Developer {
         try{
 
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/visionworksframeinventory?verifyServerCertificate=false&useSSL=true", "root", "VisionWorks!");
-            String sql = "UPDATE developer SET employeeNumber = ?, employeeFirstName = ?, employeeLastName = ?, birthday = ?"
-                    + "WHERE employeeNumber = ?";
+            String sql = "UPDATE developer SET employeeNumber = ?, employeeFirstName = ?, employeeLastName = ?, birthday = ? WHERE employeeNumber = ?";
 
             preparedStatement = conn.prepareStatement(sql);
 
@@ -146,6 +148,7 @@ public class Developer {
             preparedStatement.setString(2, employeeFirstName);
             preparedStatement.setString(3, employeeLastName);
             preparedStatement.setDate(4, db);
+            preparedStatement.setString(5, this.employeeNumber);
 
             preparedStatement.executeUpdate();
             preparedStatement.close();
