@@ -2,6 +2,7 @@ package com.viewsAndControllers;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import com.models.Developer;
@@ -35,6 +36,7 @@ public class NewDeveloperController implements Initializable, ControllerClass{
         try{
 
             if (developer != null){
+                updateDeveloper();
                 developer.updateDB();
                 NewSceneMaker nsm = new NewSceneMaker();
                 nsm.newScene(event, "ViewDeveloperList.fxml", "VisionWorks Database CRUD GUI");
@@ -113,20 +115,13 @@ public class NewDeveloperController implements Initializable, ControllerClass{
         this.developerBirthdate.setValue(developer.getBirthday());
         this.createNewUserLabel.setText("Edit Developer");
         this.createNewUserButton.setText("Save Edit to Database");
-        this.createNewUserButton.setText("Save Edit to Database");
     }
 
+    private void updateDeveloper() throws SQLException {
+        developer.setEmployeeNumber(developerEmployeeNumber.getText());
+        developer.setFirstName(developerFirstName.getText());
+        developer.setLastName(developerLastName.getText());
+        developer.setBirthday(developerBirthdate.getValue());
 
-
-
-
-
-
-
-
-
-
-
-
-           
+    }
 }
